@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Segment Tree Visualization</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href='css/segment.css' rel="stylesheet">
+  <link href='css/diagram.css' rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <link rel='shortcut icon' type='image/x-icon' href='favicon-tree.ico' />
+  <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/build/sigma.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <div id="top-options" class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 column">
+        <form id="add-form" class="form-group">
+          <h4>Insert Intervals</h4>
+          <div>
+            <label for="keyText">Starting Position</label>
+            <input id="startingInterval" name="startingInterval" class="form-control" type="text" required>
+          </div>
+          <div>
+            <label for="valText">Ending Position</label>
+            <input id="endingInterval" name="endingInterval" class="form-control" type="text" required>
+          </div>
+          <!-- <button onclick="addToSet()">Add</button> -->
+          <button id=" btnAdd" type="button" class="btn btn-default" onclick="addToArray()">Add</button>
+          <form id="search-form" class="form-group">
+            <h4>List</h4>
+            <h4 id="show"></h4>
+          </form>
+        </form>
+      </div>
+
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 column">
+        <br>
+        Select Query Type:<br>
+        <input type="radio" id="rbMax" name="query" value="Max">
+        <label for="Max">Max</label><br>
+        <input type="radio" id="rbMin" name="query" value="Min">
+        <label for="Min">Min</label><br>
+        <input type="radio" id="rbSum" name="query" value="Sum">
+        <label for="Sum">Sum</label>
+        <button id=" btnGenerateTree" type="button" class="btn btn-default" onclick="generateSet();">Generate</button>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 column">
+        <form id="add-form" class="form-group">
+          <h4>Query Intervals</h4>
+          <div>
+            <label for="keyText">Starting Position</label>
+            <input id="startingIntervalQuery" name="startingInterval" class="form-control" type="text">
+          </div>
+          <div>
+            <label for="valText">Ending Position</label>
+            <input id="endingIntervalQuery" name="endingInterval" class="form-control" type="text">
+          </div>
+          <button id=" btnFind" type="button" class="btn btn-default" onclick="find()">Find</button>
+          <div id="ans">
+            Answer is:-
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- display the list -->
+
+
+  </div>
+  <div id="tree-container" class="container"></div>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+  <script src="js/segment.js"></script>
+
+</body>
+
+</html>
